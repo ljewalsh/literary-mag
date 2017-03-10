@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block header-items %}
+    <li role="presentation" class="active"><a href="/">Journal Name/Logo</a></li>
+    <li role="presentation" class="active"><a>Contents</a></li>
+    <li role="presentation" class="active"><a href="/archive">Archive</a></li>    
+{% endblock %}
+
+{% block left-container %}
+    <div id='left-button' style="background-image: url({% static 'main/images/arrow-right.png' %})" class="navbar navbar-default side">
+        <a href="/Contents"></a>
+    </div>
+{% endblock %}
+
+{% block middle-container %}
+    <div id="journal"></div>
+{% endblock %}
+
+{% block right-container %}
+    <div id='right-button' style="background-image: url({% static 'main/images/arrow-left.png' %})" class="navbar navbar-default side">
+        <a href="/Contents"></a>
+    </div>
+{% endblock %}

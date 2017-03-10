@@ -1,0 +1,84 @@
+html {
+    font-size: 12px;
+}
+
+#header-container {
+    padding: 0;
+}
+
+#arts-logo {
+    float:left;
+    padding-top: 30px;
+    padding-left: 15px;
+}
+
+#header, #header li {
+    height: 100px;
+    background-color: #000000;
+}
+
+#header li a {
+    padding: 30px 15px;
+    border-radius: 0;
+    font-size: 28px;
+    font-family: 'typewriter';
+}
+
+@font-face {
+  font-family: 'typewriter';
+  src: url("../fonts/SplendidN.ttf") format('truetype');
+  
+}
+
+#contents {
+    height: 100%;
+    background-image: url('../images/crumpled-paper.jpg');   
+}
+
+#about {    
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 5%;
+    width: 80%;
+    margin: 10% 10%;
+}
+
+#about h1 {
+    font-family: typewriter;
+    font-weight: bold;
+    text-align:center;
+    margin-bottom: 50px;
+}
+
+#left-container, #right-container {
+    padding: 0;  
+}
+
+#left-button {
+    border-radius: 4px 0 0 4px;
+    float: right;
+}
+
+#right-button {
+    border-radius: 0 4px 4px 0;    
+}
+
+
+#left-button, #right-button {   
+   margin-bottom: 0;
+   height: 160px;
+   width: 50%;
+   background-repeat: no-repeat;
+   background-size: 40px;
+   background-position: 50% 50%;
+   border-color: #000000; 
+   top: 30vh;
+}
+
+#journal {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+

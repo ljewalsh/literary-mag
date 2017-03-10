@@ -1,0 +1,33 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'main/css/bootstrap.css' %}" />
+
+<link type="text/js" href="{% static 'main/js/bootstrap.js' %}" />
+<div class="container-fluid">
+    <div class="row">
+        <div id="header-container" class="col-sm-12 col-lg-12">
+            <ul id='header' class="nav nav-pills nav-justified">
+                <img id="arts-logo" src="{% static 'main/images/uc-arts.png' %}"/>
+                <li role="presentation" class="active">
+                    
+                    <a href="/">Journal Name/Logo</a>
+                </li>
+                {% block header-items %}                    
+                {% endblock %}
+            </ul>
+        </div>
+    </div>
+    <div id="contents" class="row">        
+        <div id="left-container" class="col-lg-1">
+            {% block left-container %}            
+            {% endblock %}
+        </div>
+        <div id="middle-container" class="col-lg-10">
+            {% block middle-container %}{% endblock %}
+        </div>
+        <div id="right-container" class="col-lg-1">
+            {% block right-container %}            
+            {% endblock %}
+        </div>        
+    </div>
+</div>
