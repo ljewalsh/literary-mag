@@ -1,9 +1,11 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^current', views.current, name='current'),
+    url(r'^journal/([0-9])/([0-9])', views.journal, name='journal'),
     url(r'^submit', views.submit, name='submissions'),
     url(r'^archive', views.archive, name='archive'),
+    url(r'^tinymce/', include('tinymce.urls'))
 ]
+

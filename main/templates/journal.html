@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block header-items %}    
     <li id="issue-contents" role="presentation" class="active">
         <a>Contents</a>       
@@ -8,23 +9,52 @@
 {% endblock %}
 
 {% block left-container %}
-    <div id='left-button' class="navbar navbar-default side">
-        <a href="/Contents"></a>
-    </div>
+    {% if page_number > '0' %}
+        <form action="/journal/{{issue.number}}/{{page_number|add:'-1'}}">
+            <input type="submit" id='left-button' value="" class="navbar navbar-default side"/>            
+        </form>
+    {% endif %}
 {% endblock %}
 
 {% block middle-container %}    
-    <div id="journal">
-        <div id="contents-panel">
-            <h1>{{latest_issue}}</1>
+    <div id="contents-panel">
+            <div>
+                <h1>{{issue}}</h1>
+                <ul>
+                
+                {% for story in stories %}                    
+                    <li>                        
+                        <span class="title"><a href="{{forloop.counter}}">{{story}}</a></span>                        
+                        <br/>
+                        <span class="author">{{story.author}}</span>                        
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
+    <div id="journal">       
+        {% if page_number == '0' %}
+            <div id="cover"><img src="{{issue.cover.url}}"/></div>
+        {% else %}
+            <div class="story">
+                {% for story in stories %}                   
+                    {% if forloop.counter == page_number|add:'0' %}                        
+                        <h1>{{story.title}}</h1>
+                        <h3>{{story.author}}</h3>                        
+                        {{story.text|safe}}
+                    {% endif %}  
+                {% endfor %}   
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
 
-{% block right-container %}
-    <div id='right-button' class="navbar navbar-default side">
-        <a href="/Contents"></a>
-    </div>
+{% block right-container %}    
+    {% if story_number > page_number|add:'0' %}        
+        <form action="/journal/{{issue.number}}/{{page_number|add:'1'}}">
+            <input id='right-button' type="submit" value="" class="navbar navbar-default side"/>
+        </form>
+    {% endif %} 
 {% endblock %}
 
 {% block script %}

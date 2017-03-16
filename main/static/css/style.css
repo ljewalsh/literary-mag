@@ -60,15 +60,36 @@ html {
     background-position: 50% 0%;    
 }
 
-#contents-panel h1 {
+#contents-panel div {
     width: 50%;
     margin: 0 25%;
-    padding: 10% 0 5% 0;
-    text-align: center;
+    padding: 0 5%;
     font-family: typewriter;
+    font-size: 25px;
+}
+
+#contents-panel h1 {    
+    margin-top: 0;
+    padding: 10% 0 5% 0;
+    text-align: center;    
     font-weight: bold;    
 }
 
+#contents-panel ul {
+   list-style-type: none; 
+}
+
+#contents-panel li {
+    padding-bottom: 5%;
+}
+
+.author {
+    font-size: 20px;    
+}
+
+#cover {
+    text-align: center;
+}
 
 #left-button {
     border-radius: 4px 0 0 4px;
@@ -91,4 +112,20 @@ html {
    background-position: 50% 50%;
    border-color: #000000; 
    top: 30vh;
+}
+
+.story {
+    background-color: #ffffff;
+    padding: 10%;
+}
+
+#journal h1 {
+    font-family: typewriter;
+    text-align: center;    
+}
+
+#journal h3 {
+    font-family: typewriter;
+    text-align: center;
+    padding-bottom: 10%;
 }
