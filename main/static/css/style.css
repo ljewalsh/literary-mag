@@ -31,36 +31,18 @@ html {
     min-height: 100%;    
 }
 
-#about {    
-    border-radius: 8px;    
-    padding: 10%;
-    width: 80%;
-    min-height: 90%;
-    margin: 0 10%;
-    background-image: url('../images/notepaper.png');
-    background-repeat: no-repeat;
-    background-position: 50% 10%;
-    background-size: 90%;
-}
-
 #about h1 {
     font-family: typewriter;
     font-weight: bold;
     text-align:center;
     margin-bottom: 50px;
+    margin-top: 0;
 }
 
 #left-container, #right-container {
     padding: 0;  
 }
 
-#contents-panel {    
-    display: none;
-    height: 100%;    
-    background-image: url('../images/notepaper-contents.png');
-    background-repeat: no-repeat;    
-    background-position: 50% 0%;    
-}
 
 #contents-panel div {
     width: 50%;
@@ -124,18 +106,67 @@ html {
    top: 30vh;
 }
 
-.story {
-    background-color: #ffffff;
-    padding: 10% 20%;
+#contents-panel {
+    display: none;
 }
 
-#journal h1 {
+#story-top, #archive-top, #guideline-top, #about-top, #panel-top {    
+    height: 20%;
+    background-image: url('../images/notepaper-top.png'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#story, #archive, #guideline, #about, #panel {    
+    background-color: #ffffff;
+    padding: 0 10%
+    }
+    
+#story, #about {
+    padding: 0 20%;
+}
+
+
+#story h1, #guideline h1{
     font-family: typewriter;
-    text-align: center;    
+    text-align: center;
+    margin-top: 0;
 }
 
 #journal h3 {
     font-family: typewriter;
     text-align: center;
     padding-bottom: 10%;
+}
+
+#story-bottom, #archive-bottom, #guideline-bottom, #about-bottom , #panel-bottom{    
+    height: 150px;
+    background-image: url('../images/notepaper-bottom.png'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: center top;
+}
+
+#archive {
+    width: 100%;
+}
+
+#panel { 
+    width: 100%;
+    height: 70%;
+}
+
+.archive-cover{
+    height: 300px;
+}
+
+.archive-title {
+    font-family: typewriter;
+    font-size: 40px;
+    
+}
+
+#guideline p, #about p {
+    margin-bottom: 0;
 }

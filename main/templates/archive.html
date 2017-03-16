@@ -1,2 +1,12 @@
 {% extends "base.html" %}
 
+{% block middle-container %}
+    <div id="archive-top"></div>
+    <div id="archive">
+        {% for issue in issues %}
+            <p class="archive-title"><a href="/journal/{{issue.number}}/0">{{issue}}</a></p>
+            <img class="archive-cover" src="{{issue.cover.url}}"/>            
+        {% endfor %}
+    </div>
+    <div id="archive-bottom"></div>
+{% endblock %}

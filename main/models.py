@@ -61,7 +61,7 @@ class About_Text(models.Model):
         verbose_name_plural = "About_Text"
  
 class Submission_Guidelines(models.Model):
-    submission_guidelines = HTMLField(blank=True)
+    text = HTMLField(blank=True)
     
     class Meta:
         verbose_name_plural = "Submission_Guidelines"

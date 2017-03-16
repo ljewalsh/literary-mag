@@ -2,9 +2,11 @@
 {% load static %}
 
 {% block header-items %}    
-    <li id="issue-contents" role="presentation" class="active">
-        <a>Contents</a>       
-    </li>    
+    {% if page_number != '0' %}
+        <li id="issue-contents" role="presentation" class="active">
+            <a>Contents</a>       
+        </li> 
+    {% endif %}
     <li class="active"><a href="/archive">Archive</a></li>
 {% endblock %}
 
@@ -18,7 +20,7 @@
 
 {% block middle-container %}    
     <div id="contents-panel">
-            <div>
+            <div id="panel">
                 <h1>{{issue}}</h1>
                 <ul>
                 
@@ -31,12 +33,34 @@
                 {% endfor %}
                 </ul>
             </div>
+            <div id="panel-bottom"></div>
         </div>
     <div id="journal">       
         {% if page_number == '0' %}
-            <div id="cover"><img src="{{issue.cover.url}}"/></div>
-        {% else %}
-            <div class="story">
+            <div class="row">
+                <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
+                    <div id="cover"><img src="{{issue.cover.url}}"/></div>
+                </div>
+                <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
+                    <div id="panel-top"></div>
+                    <div id="panel">
+                        <h1>{{issue}}</h1>
+                        <ul>                
+                            {% for story in stories %}                    
+                            <li>                        
+                                <span class="title"><a href="{{forloop.counter}}">{{story}}</a></span>                        
+                                <br/>
+                                <span class="author">{{story.author}}</span>                        
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div id="panel-bottom"></div>
+                </div>
+            </div>
+        {% else %}            
+            <div id="story-top"></div>
+            <div id="story">
                 {% for story in stories %}                   
                     {% if forloop.counter == page_number|add:'0' %}                        
                         <h1>{{story.title}}</h1>
@@ -45,6 +69,7 @@
                     {% endif %}  
                 {% endfor %}   
             </div>
+            <div id="story-bottom"></div>
         {% endif %}
     </div>
 {% endblock %}

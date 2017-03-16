@@ -9,7 +9,10 @@
     {% endblock %}
     
     {% block middle-container %}
+        <div id="about-top"></div>
         <div id="about">
             <h1>Welcome to Journal Name</h1>
-            {{about_text.text | safe}}            
+            {{about_text.text | safe}}
+        </div>
+        <div id="about-bottom"></div>
     {% endblock %}

@@ -5,3 +5,16 @@
     <li role="presentation" class="active"><a>Submit</a></li>    
 {% endblock %}
 
+{% block middle-container %}
+    <div class="row">
+        <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
+            <div id="guideline-top"></div>
+            <div id="guideline">
+                <h1>Submission Guidelines</h1>
+                {{guidelines.text| safe}}
+            </div>
+            <div id="guideline-bottom"></div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+    </div>
+{% endblock %}

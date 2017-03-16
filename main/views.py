@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Issue, About_Text
+from .models import Issue, About_Text, Submission_Guidelines
 
 def index(request):    
     if Issue.objects.exists():
@@ -16,7 +16,9 @@ def journal(request,issue_number, page_number):
     return render(request, 'journal.html', {'issue': issue, 'stories': stories, 'page_number':page_number, 'story_number': story_number})
     
 def submit(request):
-    return render(request, 'submissions.html')
+    guidelines = Submission_Guidelines.objects.get(pk='1')
+    return render(request, 'submissions.html', {'guidelines':guidelines})
     
 def archive(request):
-    return render(request, 'archive.html')
+    issues = Issue.objects.all()
+    return render(request, 'archive.html', {'issues':issues})
