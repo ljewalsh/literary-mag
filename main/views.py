@@ -1,12 +1,13 @@
 from django.shortcuts import render
-from .models import Issue
+from .models import Issue, About_Text
 
 def index(request):    
     if Issue.objects.exists():
         latest_issue = Issue.objects.latest('pub_date')        
     else:
         latest_issue = None
-    return render(request, 'index.html', {'latest_issue': latest_issue})
+    about_text = About_Text.objects.get(pk='1')    
+    return render(request, 'index.html', {'latest_issue': latest_issue, 'about_text': about_text})
     
 def journal(request,issue_number, page_number):    
     issue = Issue.objects.get(pk=issue_number)

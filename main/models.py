@@ -53,3 +53,15 @@ class Submission(models.Model):
     
     def __str__(self):
         return self.title
+        
+class About_Text(models.Model):
+    text = HTMLField(blank=True)
+    
+    class Meta:
+        verbose_name_plural = "About_Text"
+ 
+class Submission_Guidelines(models.Model):
+    submission_guidelines = HTMLField(blank=True)
+    
+    class Meta:
+        verbose_name_plural = "Submission_Guidelines"

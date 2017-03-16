@@ -6,6 +6,7 @@ html {
     padding: 0;
 }
 
+
 #header, #header li {
     background-color: #000000;
 }
@@ -15,7 +16,8 @@ html {
     border-radius: 0;
     font-size: 28px;
     font-weight: bold;
-    font-family: 'typewriter';
+    font-family: typewriter;
+    text-align: center;
 }
 
 @font-face {
@@ -83,6 +85,14 @@ html {
     padding-bottom: 5%;
 }
 
+.issue-title {
+    color: #ffffff;
+    font-family: typewriter;
+    font-weight: bold;
+    width: 100%;
+    font-size: 25px;
+}
+
 .author {
     font-size: 20px;    
 }
@@ -116,7 +126,7 @@ html {
 
 .story {
     background-color: #ffffff;
-    padding: 10%;
+    padding: 10% 20%;
 }
 
 #journal h1 {

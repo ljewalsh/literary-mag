@@ -11,6 +11,5 @@
     {% block middle-container %}
         <div id="about">
             <h1>Welcome to Journal Name</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet enim eget enim placerat consectetur. Duis a sapien sodales, dapibus leo fermentum, hendrerit nunc. Aenean viverra justo arcu, in cursus nulla fringilla in. Donec commodo hendrerit massa, eget maximus erat efficitur quis. Aliquam faucibus turpis fermentum lacus imperdiet, id aliquet massa fringilla. Morbi ac tortor vel turpis laoreet facilisis eget ac lacus. Quisque feugiat pulvinar metus, at accumsan diam maximus quis. Quisque eu mauris turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec urna augue. Nam laoreet pharetra tellus, in faucibus odio molestie quis. Vivamus nec dolor ac tortor semper convallis. Fusce leo lectus, viverra nec orci vel, pretium rutrum velit. Sed venenatis in sem id imperdiet. Ut at sapien purus. Proin risus magna, scelerisque eu lacinia ac, ultricies vitae diam.</p>
-            
+            {{about_text.text | safe}}            
     {% endblock %}
