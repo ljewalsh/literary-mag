@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from tinymce.models import HTMLField
+from froala_editor.fields import FroalaField
 
 class Issue(models.Model):
     pub_date = models.DateTimeField('date published')
@@ -29,7 +29,7 @@ class Story(models.Model):
     issue = models.ForeignKey(Issue)    
     author = models.ForeignKey(Author)
     title = models.CharField(max_length=200)
-    text = HTMLField(blank=True)
+    text = FroalaField(blank=True)
     
     def __str__(self):
         return self.title
@@ -55,13 +55,12 @@ class Submission(models.Model):
         return self.title
         
 class About_Text(models.Model):
-    text = HTMLField(blank=True)
+    text = FroalaField(blank=True)
     
     class Meta:
         verbose_name_plural = "About_Text"
  
 class Submission_Guidelines(models.Model):
-    text = HTMLField(blank=True)
-    
+    text = FroalaField(blank=True)
     class Meta:
         verbose_name_plural = "Submission_Guidelines"

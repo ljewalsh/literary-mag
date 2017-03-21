@@ -26,7 +26,7 @@ html {
   
 }
 
-#contents {
+#content-row {
     background-image: url('../images/crumpled-paper.jpg'); 
     min-height: 100%;    
 }
@@ -43,74 +43,7 @@ html {
     padding: 0;  
 }
 
-
-#contents-panel div {
-    width: 50%;
-    margin: 0 25%;
-    padding: 0 5%;
-    font-family: typewriter;
-    font-size: 25px;
-}
-
-#contents-panel h1 {    
-    margin-top: 0;
-    padding: 10% 0 5% 0;
-    text-align: center;    
-    font-weight: bold;    
-}
-
-#contents-panel ul {
-   list-style-type: none; 
-}
-
-#contents-panel li {
-    padding-bottom: 5%;
-}
-
-.issue-title {
-    color: #ffffff;
-    font-family: typewriter;
-    font-weight: bold;
-    width: 100%;
-    font-size: 25px;
-}
-
-.author {
-    font-size: 20px;    
-}
-
-#cover {
-    text-align: center;
-}
-
-#left-button {
-    border-radius: 4px 0 0 4px;
-    float: right;
-    background-image: url('../images/arrow-right.png');
-}
-
-#right-button {
-    border-radius: 0 4px 4px 0; 
-    background-image: url('../images/arrow-left.png');  
-}
-
-
-#left-button, #right-button {   
-   margin-bottom: 0;
-   height: 160px;
-   width: 50%;
-   background-repeat: no-repeat;
-   background-size: 40px;
-   background-position: 50% 50%;
-   border-color: #000000; 
-   top: 30vh;
-}
-
-#contents-panel {
-    display: none;
-}
-
-#story-top, #archive-top, #guideline-top, #about-top, #panel-top {    
+#story-top, #archive-top, #guideline-top, #about-top, #panel-top{    
     height: 20%;
     background-image: url('../images/notepaper-top.png'); 
     background-size: 100%;
@@ -118,29 +51,25 @@ html {
     background-position: center bottom;
 }
 
-#story, #archive, #guideline, #about, #panel {    
+#story, #archive, #guideline, #about, #panel, #contents {    
     background-color: #ffffff;
     padding: 0 10%
-    }
+}
     
 #story, #about {
     padding: 0 20%;
 }
 
 
-#story h1, #guideline h1{
+#guideline h1{
     font-family: typewriter;
     text-align: center;
     margin-top: 0;
 }
 
-#journal h3 {
-    font-family: typewriter;
-    text-align: center;
-    padding-bottom: 10%;
-}
 
-#story-bottom, #archive-bottom, #guideline-bottom, #about-bottom , #panel-bottom{    
+
+#story-bottom, #archive-bottom, #guideline-bottom, #about-bottom , #panel-bottom, #contents-bottom{    
     height: 150px;
     background-image: url('../images/notepaper-bottom.png'); 
     background-size: 100%;
@@ -163,7 +92,7 @@ html {
 
 .archive-title {
     font-family: typewriter;
-    font-size: 40px;
+    font-size: 30px;
     
 }
 

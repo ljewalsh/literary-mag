@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block header-items %}
+            <li role="presentation" class="active"><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li> 
+            <li role="presentation" class="active"><a href="submit">Submissions</a></li>            
+    {% endblock %}
+
 {% block middle-container %}
     <div id="archive-top"></div>
     <div id="archive">

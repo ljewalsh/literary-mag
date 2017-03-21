@@ -1,0 +1,112 @@
+/*
+* — Journal Cover —
+*/
+#cover {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#cover img {
+    width: 100%;
+}
+
+/*
+* — Journal Buttons —
+*/
+#left-button, #right-button {   
+   margin-bottom: 0;
+   height: 160px;
+   width: 50%;
+   background-repeat: no-repeat;
+   background-size: 40px;
+   background-position: 50% 50%;
+   border-color: #000000; 
+   top: 30vh;
+}
+
+#left-button {
+    border-radius: 4px 0 0 4px;
+    float: right;
+    background-image: url('../images/arrow-right.png');
+}
+
+#right-button {
+    border-radius: 0 4px 4px 0; 
+    background-image: url('../images/arrow-left.png');  
+}
+
+/*
+* — Content Panels  —
+*/
+#contents-panel {
+    display: none;
+}
+
+#contents {
+    height: 85%;
+}
+
+#contents, #contents-panel div {    
+    padding: 0 5%;
+    font-family: typewriter;
+    font-size: 25px;
+}
+
+#contents-panel div {
+    width: 50%;
+    margin: 0 25%;
+}
+
+#contents-top {
+    height: 10%;
+    background-image: url('../images/notepaper-top.png'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+#contents h1, #contents-panel h1 {    
+    margin-top: 0;
+    padding: 10% 0 5% 0;
+    text-align: center;    
+    font-weight: bold;
+}
+
+#contents ul, #contents-panel ul {
+   list-style-type: none; 
+   margin-bottom: 0;
+}
+
+#contents li, #contents-panel li {
+    padding-bottom: 5%;
+}
+
+/*
+* — Stories —
+*/
+
+#story h3 {
+    font-family: typewriter;
+    text-align: center;
+    padding-bottom: 10%;
+}
+
+#story h1{
+    font-family: typewriter;
+    text-align: center;
+    margin-top: 0;
+}
+
+#story p {
+    font-family: garamond;
+    font-size: 16px;
+}
+
+#story p:first-of-type::first-letter { 
+    font-size: 300%; 
+    font-family: typewriter;
+}
+
+#story p:last-child {
+    margin-bottom: 0;
+}

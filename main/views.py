@@ -16,9 +16,17 @@ def journal(request,issue_number, page_number):
     return render(request, 'journal.html', {'issue': issue, 'stories': stories, 'page_number':page_number, 'story_number': story_number})
     
 def submit(request):
+    if Issue.objects.exists():
+        latest_issue = Issue.objects.latest('pub_date')        
+    else:
+        latest_issue = None
     guidelines = Submission_Guidelines.objects.get(pk='1')
-    return render(request, 'submissions.html', {'guidelines':guidelines})
+    return render(request, 'submissions.html', {'latest_issue': latest_issue,'guidelines':guidelines})
     
 def archive(request):
+    if Issue.objects.exists():
+        latest_issue = Issue.objects.latest('pub_date')        
+    else:
+        latest_issue = None
     issues = Issue.objects.all()
-    return render(request, 'archive.html', {'issues':issues})
+    return render(request, 'archive.html', {'latest_issue': latest_issue,'issues':issues})

@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
-    'tinymce'
+    'froala_editor'
 ]
 
 MIDDLEWARE_CLASSES = [
