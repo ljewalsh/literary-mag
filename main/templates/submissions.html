@@ -6,6 +6,9 @@
     {% endblock %}
 
 {% block middle-container %}
+    {% if error %}
+		{{error}}
+    {% endif %}
     <div class="row">
         <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
             <div id="guideline-top"></div>
@@ -15,6 +18,19 @@
             </div>
             <div id="guideline-bottom"></div>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+		    <div id="guideline-top"></div>
+            <div id="guideline">
+                <h1>Submission Form</h1>
+                <form action="{% url 'submitting' %}" method='post'>
+                <label>Title:</label><input type="text" name="title" id="title"><br/>
+				<label>Your Name:</label><input type="text" name="name" id="name"><br/>
+				<label>Your Email:</label><input type="email" name="mail" id="mail"><br/>
+				<label>Upload your Story:</label><input type="file" name="file" id="file"><br/>
+				<input type="submit" value="Submit" name="submit">
+                </form>
+            </div>
+            <div id="guideline-bottom"></div>
+        </div>
     </div>
 {% endblock %}
