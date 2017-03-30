@@ -3,7 +3,10 @@ from .models import Issue, About_Text, Submission_Guidelines, Submitter, Submiss
 
 def get_latest_issue():
     if Issue.objects.exists():
-        latest_issue = Issue.objects.filter(status='Published').latest('pub_date')        
+        try:
+            latest_issue = Issue.objects.filter(status='Published').latest('pub_date')
+        except:
+            latest_issue = None
     else:
         latest_issue = None
     return latest_issue

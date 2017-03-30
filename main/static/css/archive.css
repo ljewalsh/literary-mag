@@ -1,0 +1,22 @@
+
+#archive, .latest-cover , .cover{
+    width: 100%;
+    margin-bottom: 20%;
+}
+
+a:hover {    
+    color: #000000;
+}
+
+.title {
+    font-family: typewriter;
+    font-size: 30px;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+
+}

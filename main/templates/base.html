@@ -1,8 +1,10 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/journal.css' %}" />
+   
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 <script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+{% block head %}
+{% endblock %}
 <div class="container-fluid">
     <div class="row">
         <div id="header-container" class="col-sm-12 col-lg-12">

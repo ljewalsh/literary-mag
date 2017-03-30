@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/archive.css' %}" />
+{% endblock %}
 
 {% block header-items %}
             <li role="presentation" class="active"><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li> 
@@ -8,10 +13,37 @@
 {% block middle-container %}
     <div id="archive-top"></div>
     <div id="archive">
-        {% for issue in issues %}
-            <p class="archive-title"><a href="/journal/{{issue.number}}/0">{{issue}}</a></p>
-            <img class="archive-cover" src="{{issue.cover.url}}"/>            
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <a onmouseover="show_title('{{latest_issue}}')" onmouseout="hide_title('{{latest_issue}}')" href="/journal/{{latest_issue.number}}/0">
+                    <img class="latest-cover" src="{{latest_issue.cover.url}}"/>
+                    <p id="{{latest_issue}}" class="title">Current Issue</p>
+                </a>
+            </div>
+        {% for issue in issues reversed %}
+            {% if issue != latest_issue %}
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <a onmouseover="show_title('{{issue}}')" onmouseout="hide_title('{{issue}}')" href="/journal/{{issue.number}}/0">
+                    <img class="cover" src="{{issue.cover.url}}"/>
+                    <p id="{{issue}}" class="title">{{issue}}</p>
+                </a>
+            </div>
+            {% endif %}
         {% endfor %}
+        </div>
     </div>
-    <div id="archive-bottom"></div>
+{% endblock %}
+
+{% block script %}
+<script>
+    function show_title(issue){
+        var element = document.getElementById(issue);
+        element.style.display = "block";
+    }
+    
+    function hide_title(issue){
+        var element = document.getElementById(issue);
+        element.style.display = "none";
+    }
+</script>
 {% endblock %}
