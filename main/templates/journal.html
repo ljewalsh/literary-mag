@@ -5,7 +5,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/journal.css' %}" />
 {% endblock %}
 
-{% block header-items %}    
+{% block header-items %}
+    {% if page_number != '0' %}
+        <li id="issue-contents" class="active"><a href="#">Issue Contents</a></li>
+    {% endif %}
     <li class="active"><a href="/archive">Archive</a></li>
     <li class="active"><a href="/submit">Submissions</a></li>
 {% endblock %}
@@ -20,6 +23,21 @@
 
 {% block middle-container %}    
     <div id="journal">       
+        <div id="contents-panel">
+            <div id="contents">
+                <h1>{{issue}}</h1>
+                <ul>                
+                    {% for story in stories %}                    
+                        <li>                        
+                            <span class="title"><a href="{{forloop.counter}}">{{story}}</a></span>                        
+                            <br/>
+                            <span class="author">{{story.author}}</span>                        
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="bottom"></div>
+        </div>        
         {% if page_number == '0' %}
             <div class="row">
                 <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">

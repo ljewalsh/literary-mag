@@ -3,7 +3,7 @@
 */
 #cover {
     text-align: center;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 #cover img {
@@ -46,15 +46,25 @@
     height: 85%;
 }
 
-#contents, #contents-panel div {    
+#contents, #contents-panel #contents{    
     padding: 0 5%;
     font-family: typewriter;
     font-size: 25px;
 }
 
-#contents-panel div {
+#contents-panel #contents{
     width: 50%;
     margin: 0 25%;
+    height: 70%;
+    background-color: #ffffff;
+}
+
+#contents-panel #bottom {
+    height: 10%;
+    background-image: url('../images/notepaper-bottom.png'); 
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center bottom;  
 }
 
 #contents-top {

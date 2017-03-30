@@ -60,6 +60,10 @@ html {
     padding: 0 20%;
 }
 
+#about {
+    padding-bottom: 10%;
+    margin-bottom: 20%;
+}
 
 #story-bottom, #archive-bottom, #guideline-bottom, #about-bottom , #panel-bottom, #contents-bottom{    
     height: 150px;
@@ -69,6 +73,6 @@ html {
     position: center top;
 }
 
-#guideline p, #about p {
+#guideline p {
     margin-bottom: 0;
 }
