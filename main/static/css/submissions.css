@@ -1,0 +1,32 @@
+#upload-label {
+    width: 50%;
+    font-family: typewriter;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#submission-form {
+    padding: 20% 10% 20% 10%;
+    background-size: 100%;
+    background-color: #000000;
+    margin: 15% 0;
+    border-radius: 10px;
+}
+
+.main-labels {
+    color: #ffffff;
+    font-family: typewriter;
+    font-size: 20px;
+    width: 30%;
+}
+
+.main-inputs {
+    width: 60%;    
+}
+
+
+#guideline h1{
+    font-family: typewriter;
+    text-align: center;
+    margin-top: 0;
+}
