@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/submissions.css' %}" />
+{% endblock %}
+
 {% block header-items %}  
     <li role="presentation" class="active"><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li>                
     <li role="presentation" class="active"><a href="archive">Archive</a></li>
@@ -19,18 +24,20 @@
             <div id="guideline-bottom"></div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-		    <div id="guideline-top"></div>
-            <div id="guideline">
-                <h1>Submission Form</h1>
+            <div id="submission-form">
                 <form action="{% url 'submitting' %}" method='post'>
-                <label>Title:</label><input type="text" name="title" id="title"><br/>
-				<label>Your Name:</label><input type="text" name="name" id="name"><br/>
-				<label>Your Email:</label><input type="email" name="mail" id="mail"><br/>
-				<label>Upload your Story:</label><input type="file" name="file" id="file"><br/>
+				<label class="main-labels">Your Name:</label><input class="main-inputs" type="text" name="name" id="name"><br/>
+				<label class="main-labels">Your Email:</label><input class="main-inputs" type="email" name="mail" id="mail"><br/>
+				<label class="main-labels">Story Title:</label><input class="main-inputs" type="text" name="title" id="title">
+                <br/>
+                <br/>
+                <label id="upload-label">Upload your Story:</label><input type="file" name="file" id="file">
+                <br/>
+                <br/>
+                <br/>
 				<input type="submit" value="Submit" name="submit">
                 </form>
             </div>
-            <div id="guideline-bottom"></div>
         </div>
     </div>
 {% endblock %}

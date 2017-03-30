@@ -61,39 +61,12 @@ html {
 }
 
 
-#guideline h1{
-    font-family: typewriter;
-    text-align: center;
-    margin-top: 0;
-}
-
-
-
 #story-bottom, #archive-bottom, #guideline-bottom, #about-bottom , #panel-bottom, #contents-bottom{    
     height: 150px;
     background-image: url('../images/notepaper-bottom.png'); 
     background-size: 100%;
     background-repeat: no-repeat;
     position: center top;
-}
-
-#archive {
-    width: 100%;
-}
-
-#panel { 
-    width: 100%;
-    height: 70%;
-}
-
-.archive-cover{
-    height: 300px;
-}
-
-.archive-title {
-    font-family: typewriter;
-    font-size: 30px;
-    
 }
 
 #guideline p, #about p {

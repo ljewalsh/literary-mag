@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/journal.css' %}" />
+{% endblock %}
+
 {% block header-items %}    
     <li class="active"><a href="/archive">Archive</a></li>
     <li class="active"><a href="/submit">Submissions</a></li>
