@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block header-items %}
-            <li role="presentation" class="active"><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li> 
-            <li role="presentation" class="active"><a href="submit">Submissions</a></li>            
+            <li role="presentation" ><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li> 
+			<li role="presentation" class="active"><a style="pointer-events: none; cursor: default;" href="archive">Archive</a></li>
+            <li role="presentation" ><a href="submit">Submissions</a></li>            
     {% endblock %}
 
 {% block middle-container %}

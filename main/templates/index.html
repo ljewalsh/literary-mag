@@ -2,10 +2,10 @@
     {% load static %}
     {% block header-items %}
             {% if latest_issue != None %}
-                <li role="presentation" class="active"><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li>                
-                <li role="presentation" class="active"><a href="archive">Archive</a></li>            
+                <li role="presentation" ><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li>                
+                {% if issue_count > 1 %}<li role="presentation" ><a href="archive">Archive</a></li>{% endif %}
             {% endif %}
-            <li role="presentation" class="active"><a href="submit">Submissions</a></li>            
+            <li role="presentation" ><a href="submit">Submissions</a></li>            
     {% endblock %}
     
     {% block middle-container %}

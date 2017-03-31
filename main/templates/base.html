@@ -9,7 +9,8 @@
     <div class="row">
         <div id="header-container" class="col-sm-12 col-lg-12">
             <ul id='header' class="nav nav-pills nav-justified">
-                <li role="presentation" class="active"><a href="/">Journal Name</a></li>
+                <li role="presentation" {% if request.path == "/" %} class="active"{% endif %}>
+				<a {% if request.path == "/" %}style="pointer-events: none; cursor: default;"{% endif %} href="/">Journal Name</a></li>
                 {% block header-items %}                    
                 {% endblock %}
             </ul>
