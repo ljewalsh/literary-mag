@@ -8,12 +8,14 @@
 {% block header-items %}  
     <li role="presentation" ><a href="journal/{{latest_issue.number}}/0">Current Issue</a></li>                
     {% if issue_count > 1 %}<li role="presentation" ><a href="archive">Archive</a></li>{% endif %}
-	<li role="presentation" class="active"><a style="pointer-events: none; cursor: default;" href="submissions">Submissions</a></li>
+	<li role="presentation" class="active"><a style="pointer-events: none; cursor: default;" href="submit">Submissions</a></li>
     {% endblock %}
 
 {% block middle-container %}
-    {% if error %}
-		<h1>{{error}}</h1>
+    {% if messages %}
+        {% for msg in messages %}
+		    <h2>{{ msg.message }}</h2>
+        {% endfor %}
     {% endif %}
     <div class="row">
         <div class="col-lg-6 col-md-6col-sm-6 col-xs-6">
@@ -26,8 +28,8 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <div id="submission-form">
-                <form action="{% url 'submitting' %}" method='post'>{% csrf_token %}
-				{{ form.from_p }}
+                <form action="submit" enctype="multipart/form-data" method='post'>{% csrf_token %}
+				{{ form.as_p }}
 				<input type="submit" value="Submit" name="submit">
                 </form>
             </div>
