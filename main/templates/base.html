@@ -9,8 +9,20 @@
     <div class="row">
         <div id="header-container" class="col-sm-12 col-lg-12">
             <ul id='header' class="nav nav-pills nav-justified">
-                <li role="presentation" {% if request.path == "/" %} class="active"{% endif %}>
-				<a {% if request.path == "/" %}style="pointer-events: none; cursor: default;"{% endif %} href="/">Journal Name</a></li>
+                <li role="presentation" {% if request.path == "/" %}class="active"{% endif %}>
+                <a {% if request.path == "/" %}style="pointer-events: none; cursor: default;"{% endif %} href="/">Journal Name</a></li>
+                {% if latest_issue != None %}
+                    {% if page_number != '0' and page_number != None %}
+                        <li id="issue-contents" ><a href="#">Issue Contents</a></li>
+                    {% else %}
+                        <li role="presentation" {% if issue.number == latest_issue.number %}class="active"{% endif %}>
+                        <a {% if issue.number == latest_issue.number %}style="pointer-events: none; cursor: default;"{% endif %} href="/journal/{{latest_issue.number}}/0">Current Issue</a></li>
+                    {% endif %}
+					{% if issue_count > 1 %}<li role="presentation" {% if request.path == "/archive" %}class="active"{% endif %}>
+                    <a {% if request.path == "/archive" %}style="pointer-events: none; cursor: default;"{% endif %} href="/archive">Archive</a></li>{% endif %}
+                {% endif %}
+                <li role="presentation" {% if request.path == "/submit" %}class="active"{% endif %}>
+                <a {% if request.path == "/submit" %}style="pointer-events: none; cursor: default;"{% endif %}href="/submit">Submissions</a></li>  
                 {% block header-items %}                    
                 {% endblock %}
             </ul>
